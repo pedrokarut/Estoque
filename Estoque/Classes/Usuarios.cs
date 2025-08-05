@@ -10,14 +10,21 @@ namespace Estoque.Classes
         [Key]
         public int id { get; private set; }
 
-        public string name { get; private set; }
+        public string name { get; set; }
 
-        public double value { get; private set; }
+        public string usr { get; set; }
 
-        public Usuarios(string name,  double value)
+        public string senha { get; set; }
+
+        public DateTime tstamp { get; set; } 
+
+        public Usuarios(string name,  string usr, string senha, DateTime tstamp)
         {
             this.name = name;
-            this.value = value;
+            this.usr = usr;
+            this.senha = senha;
+            this.tstamp = tstamp;
+            
         }
 
     }

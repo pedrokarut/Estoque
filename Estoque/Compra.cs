@@ -64,9 +64,9 @@ namespace Estoque
         private async Task InserirLinq()
         {
             DbConnection _context = new DbConnection();
-            Produtos p = new Produtos("banana", 22);
-            _context.Produtos.Add(p);
-            await _context.SaveChangesAsync();
+            //Produtos p = new Produtos("banana", 22);
+            //_context.Produtos.Add(p);
+            //await _context.SaveChangesAsync();
         }
     }
 }

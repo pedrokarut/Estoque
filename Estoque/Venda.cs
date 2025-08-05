@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Estoque
 {
-    public partial class Venda: Form
+    public partial class Venda : Form
     {
         public Venda()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
