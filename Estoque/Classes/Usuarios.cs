@@ -16,9 +16,9 @@ namespace Estoque.Classes
 
         public string senha { get; set; }
 
-        public DateTime tstamp { get; set; } 
+        public string tstamp { get; set; } 
 
-        public Usuarios(string name,  string usr, string senha, DateTime tstamp)
+        public Usuarios(string name,  string usr, string senha, string tstamp)
         {
             this.name = name;
             this.usr = usr;

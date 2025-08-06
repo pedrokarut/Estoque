@@ -1,21 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Data;
 using Estoque.Classes;
 using Estoque.Databse;
-using Microsoft.EntityFrameworkCore;
 
 namespace Estoque
 {
     public partial class Usuario : Form
     {
-        private DbContextUsuarios _context = new DbContextUsuarios();
+        private DbConnection _context = new DbConnection();
         public Usuario()
         {
             InitializeComponent();
@@ -24,6 +15,7 @@ namespace Estoque
 
         private void LimparCampos()
         {
+            txtId.Clear();
             txtLogin.Clear();
             txtNome.Clear();
             txtSenha.Clear();
@@ -31,13 +23,12 @@ namespace Estoque
 
         public void CarregaListView()
         {
-            _context = new DbContextUsuarios();
             lvUsuarios.Items.Clear();
 
             foreach (var usu in _context.Usuarios.OrderBy(p => p.id))
             {
                 lvUsuarios.Items.Add(new ListViewItem
-                (new String[] { usu.id.ToString(), usu.name, usu.usr, usu.tstamp.ToString()}));
+                (new String[] { usu.id.ToString(), usu.name, usu.usr, usu.tstamp.ToString() }));
             }
 
         }
@@ -76,14 +67,13 @@ namespace Estoque
             {//add                
                 if (ChecarCampos())
                 {
-                    _context = new DbContextUsuarios();
                     Usuarios u = new Usuarios(
                         txtNome.Text,
                         txtLogin.Text,
                         txtSenha.Text,
-                        DateTime.Now);
+                        DateTime.Now.ToString());
                     _context.Usuarios.Add(u);
-                    _context.SaveChangesAsync();
+                    _context.SaveChanges();
                     CarregaListView();
                     MessageBox.Show("Sucesso!");
                     LimparCampos();
@@ -93,7 +83,6 @@ namespace Estoque
             {//edit
                 if (ChecarCampos())
                 {
-                    _context = new DbContextUsuarios();
                     int id = Int32.Parse(txtId.Text);
                     var u = _context.Usuarios.FirstOrDefault(e => e.id == id);
 
@@ -101,9 +90,9 @@ namespace Estoque
                     {
                         u.name = txtNome.Text;
                         u.usr = txtLogin.Text;
-                        
+
                         _context.Usuarios.Update(u);
-                        _context.SaveChangesAsync();
+                        _context.SaveChanges();
                         CarregaListView();
                         MessageBox.Show("Sucesso!");
                         LimparCampos();
@@ -115,7 +104,43 @@ namespace Estoque
 
         private void btExcluir_Click(object sender, EventArgs e)
         {
+            DialogResult result = MessageBox.Show("Excluir produto?", "Confirmação",
+                MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
 
+            if (result == DialogResult.OK)
+            {
+                int id = Int32.Parse(txtId.Text);
+                _context = new DbConnection();
+                var p = _context.Produtos.FirstOrDefault(p => p.id == id);
+                _context.Produtos.Remove(p);
+                _context.SaveChanges();
+                LimparCampos();
+                CarregaListView();
+            }
+        }
+
+        private void lvUsuarios_Click(object sender, EventArgs e)
+        {
+            int id = Int32.Parse(lvUsuarios.SelectedItems[0].Text);
+
+            FindUsuarios(id);
+        }
+
+        private async Task FindUsuarios(int id)
+        {
+            if (id != 0)
+            {
+                var usu = _context.Usuarios.FirstOrDefault(e => e.id == id);
+
+                if (usu != null)
+                {
+
+                    txtId.Text = usu.id.ToString();
+                    txtNome.Text = usu.name;
+                    txtLogin.Text = usu.usr;
+                    txtSenha.Text = usu.senha;
+                }
+            }
         }
     }
 }

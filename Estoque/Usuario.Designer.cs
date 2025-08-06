@@ -36,8 +36,10 @@
             btExcluir = new Button();
             btSalvar = new Button();
             lvUsuarios = new ListView();
+            id = new ColumnHeader();
             nome = new ColumnHeader();
             login = new ColumnHeader();
+            data = new ColumnHeader();
             txtId = new TextBox();
             txtSenha = new TextBox();
             label3 = new Label();
@@ -109,13 +111,19 @@
             // 
             // lvUsuarios
             // 
-            lvUsuarios.Columns.AddRange(new ColumnHeader[] { nome, login });
+            lvUsuarios.Columns.AddRange(new ColumnHeader[] { id, nome, login, data });
             lvUsuarios.Location = new Point(276, 54);
             lvUsuarios.Name = "lvUsuarios";
             lvUsuarios.Size = new Size(280, 112);
             lvUsuarios.TabIndex = 7;
             lvUsuarios.UseCompatibleStateImageBehavior = false;
             lvUsuarios.View = View.Details;
+            lvUsuarios.Click += lvUsuarios_Click;
+            // 
+            // id
+            // 
+            id.Text = "Id";
+            id.Width = 25;
             // 
             // nome
             // 
@@ -126,6 +134,10 @@
             // 
             login.Text = "Login";
             login.Width = 100;
+            // 
+            // data
+            // 
+            data.Text = "Data Criação";
             // 
             // txtId
             // 
@@ -143,7 +155,7 @@
             txtSenha.Name = "txtSenha";
             txtSenha.PasswordChar = '*';
             txtSenha.Size = new Size(156, 23);
-            txtSenha.TabIndex = 10;
+            txtSenha.TabIndex = 4;
             // 
             // label3
             // 
@@ -192,5 +204,7 @@
         private TextBox txtId;
         private TextBox txtSenha;
         private Label label3;
+        private ColumnHeader id;
+        private ColumnHeader data;
     }
 }
