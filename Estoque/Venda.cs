@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Estoque.Classes;
 
 namespace Estoque
 {
@@ -16,6 +17,9 @@ namespace Estoque
         public ListView listProd;
         private int qtdAbreProd = 0;
         private Produto frmProd;
+        public TextBox txtId;
+        public TextBox txtNome;
+        public TextBox txtMargem;
 
 
         public Venda()
@@ -23,21 +27,23 @@ namespace Estoque
             InitializeComponent();
             instance = this;
             listProd = listView1;
+            txtId = txtIdProdSel;
+            txtNome = txtNomeProd;
+            txtMargem = txtMargemSel;
         }
 
-        //public Venda(int id, string tela)
-        //{
-          //  InitializeComponent();
-            //frmProd = new Produto();
-          //  if (id != 0 && tela == "prod")
-         //   {
-        //        listBox1.Items.Add(id.ToString());
-        //    }
-        //}
+        private void LimparCamposProdutos()
+        {
+            txtIdProdSel.Clear();
+            txtNomeProd.Clear();
+            txtQtd.Clear();
+            txtMargem.Clear();
+        }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(qtdAbreProd == 0)
+            if (qtdAbreProd == 0)
             {
                 frmProd = new Produto();
                 frmProd.ShowDialog();
@@ -46,7 +52,7 @@ namespace Estoque
             {
                 Produto.instance.ShowDialog();
             }
-                
+
         }
 
         private void Venda_Enter(object sender, EventArgs e)
@@ -55,12 +61,78 @@ namespace Estoque
         }
 
         private void Venda_Activated(object sender, EventArgs e)
-        { 
+        {
 
         }
 
         private void button1_Click_1(object sender, EventArgs e)
+        {//add na sacola
+
+            if (txtQtd.Text != "")
+            {
+                if (Int32.Parse(txtQtd.Text) > 0)
+                {
+                    listProd.Items.Add(new ListViewItem
+                    (new String[] {
+                                txtId.Text,
+                                txtNomeProd.Text,
+                                txtQtd.Text,
+                                txtMargem.Text
+                    }));
+                    LimparCamposProdutos();
+                }
+                else
+                {
+                    MessageBox.Show("Quantidade não pode ser zero");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Quantidade não pode ser vazia");
+            }
+
+
+        }
+
+        private void btnAddProd_Click(object sender, EventArgs e)
         {
+            if (qtdAbreProd == 0)
+            {
+                frmProd = new Produto();
+                frmProd.ShowDialog();
+            }
+            else
+            {
+                Produto.instance.ShowDialog();
+            }
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            //add na sacola
+
+            if (txtQtd.Text != "")
+            {
+                if (Int32.Parse(txtQtd.Text) > 0)
+                {
+                    listProd.Items.Add(new ListViewItem
+                    (new String[] {
+                                txtId.Text,
+                                txtNomeProd.Text,
+                                txtQtd.Text,
+                                txtMargem.Text
+                    }));
+                    LimparCamposProdutos();
+                }
+                else
+                {
+                    MessageBox.Show("Quantidade não pode ser zero");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Quantidade não pode ser vazia");
+            }
         }
     }
 }

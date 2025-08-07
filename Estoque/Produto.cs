@@ -172,9 +172,12 @@ namespace Estoque
             {
                 //Venda v = new Venda(Int32.Parse(lvProdutos.SelectedItems[0].Text), "prod");
                 this.Hide();
-                Venda.instance.listProd.Items.Add(new ListViewItem
-                (new String[] { lvProdutos.SelectedItems[0].Text, "TESTE", "" }));
-                Venda.instance.listProd.LabelEdit = true;
+                Venda.instance.txtId.Text = lvProdutos.SelectedItems[0].Text;
+                int id = Int32.Parse(txtId.Text);
+                _context = new DbConnection();
+                var p = _context.Produtos.FirstOrDefault(p => p.id == id);
+                Venda.instance.txtNome.Text = p.name;
+                Venda.instance.txtMargem.Text = "0.05";
                 Venda.instance.Show();
             }
             
