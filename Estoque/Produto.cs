@@ -8,10 +8,12 @@ namespace Estoque
     public partial class Produto : Form
     {
         private DbConnection _context = new DbConnection();
+        public static Produto instance;
         public Produto()
         {
             InitializeComponent();
             CarregaListView();
+            instance = this;
         }
 
 
@@ -162,6 +164,20 @@ namespace Estoque
                 Limpar();
                 CarregaListView();
             }
+        }
+
+        private void lvProdutos_DoubleClick(object sender, EventArgs e)
+        {
+            if(lvProdutos.SelectedItems[0].Text != "")
+            {
+                //Venda v = new Venda(Int32.Parse(lvProdutos.SelectedItems[0].Text), "prod");
+                this.Hide();
+                Venda.instance.listProd.Items.Add(new ListViewItem
+                (new String[] { lvProdutos.SelectedItems[0].Text, "TESTE", "" }));
+                Venda.instance.listProd.LabelEdit = true;
+                Venda.instance.Show();
+            }
+            
         }
     }
 }

@@ -28,136 +28,234 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            label2 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            label3 = new Label();
-            label4 = new Label();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            label5 = new Label();
+            groupBox1 = new GroupBox();
             textBox5 = new TextBox();
+            label5 = new Label();
+            textBox4 = new TextBox();
+            textBox3 = new TextBox();
+            label4 = new Label();
+            label3 = new Label();
+            textBox2 = new TextBox();
+            textBox1 = new TextBox();
+            label2 = new Label();
+            label1 = new Label();
+            btnNovo = new Button();
+            btnExcluir = new Button();
+            btnSalvar = new Button();
+            lvClientes = new ListView();
+            id = new ColumnHeader();
+            nome = new ColumnHeader();
+            endereco = new ColumnHeader();
+            cnpj = new ColumnHeader();
+            incricaoEstadual = new ColumnHeader();
+            telefone = new ColumnHeader();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
-            // label1
+            // groupBox1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(95, 85);
-            label1.Name = "label1";
-            label1.Size = new Size(43, 15);
-            label1.TabIndex = 0;
-            label1.Text = "Nome:";
+            groupBox1.Controls.Add(btnSalvar);
+            groupBox1.Controls.Add(btnExcluir);
+            groupBox1.Controls.Add(btnNovo);
+            groupBox1.Controls.Add(textBox5);
+            groupBox1.Controls.Add(label5);
+            groupBox1.Controls.Add(textBox4);
+            groupBox1.Controls.Add(textBox3);
+            groupBox1.Controls.Add(label4);
+            groupBox1.Controls.Add(label3);
+            groupBox1.Controls.Add(textBox2);
+            groupBox1.Controls.Add(textBox1);
+            groupBox1.Controls.Add(label2);
+            groupBox1.Controls.Add(label1);
+            groupBox1.Location = new Point(24, 26);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(320, 389);
+            groupBox1.TabIndex = 10;
+            groupBox1.TabStop = false;
             // 
-            // label2
+            // textBox5
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(80, 114);
-            label2.Name = "label2";
-            label2.Size = new Size(59, 15);
-            label2.TabIndex = 1;
-            label2.Text = "Endereço:";
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(156, 79);
-            textBox1.Margin = new Padding(3, 2, 3, 2);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(110, 23);
-            textBox1.TabIndex = 2;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(156, 111);
-            textBox2.Margin = new Padding(3, 2, 3, 2);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(110, 23);
-            textBox2.TabIndex = 3;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(102, 152);
-            label3.Name = "label3";
-            label3.Size = new Size(37, 15);
-            label3.TabIndex = 4;
-            label3.Text = "CNPJ:";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(35, 188);
-            label4.Name = "label4";
-            label4.Size = new Size(104, 15);
-            label4.TabIndex = 5;
-            label4.Text = "Inscrição estadual:";
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(156, 149);
-            textBox3.Margin = new Padding(3, 2, 3, 2);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(110, 23);
-            textBox3.TabIndex = 6;
-            // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(156, 185);
-            textBox4.Margin = new Padding(3, 2, 3, 2);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(110, 23);
-            textBox4.TabIndex = 7;
+            textBox5.Location = new Point(144, 240);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(153, 27);
+            textBox5.TabIndex = 19;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(84, 232);
+            label5.Location = new Point(69, 243);
             label5.Name = "label5";
-            label5.Size = new Size(54, 15);
-            label5.TabIndex = 8;
+            label5.Size = new Size(69, 20);
+            label5.TabIndex = 18;
             label5.Text = "Telefone:";
             // 
-            // textBox5
+            // textBox4
             // 
-            textBox5.Location = new Point(156, 224);
-            textBox5.Margin = new Padding(3, 2, 3, 2);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(110, 23);
-            textBox5.TabIndex = 9;
+            textBox4.Location = new Point(144, 188);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(153, 27);
+            textBox4.TabIndex = 17;
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(145, 142);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(153, 27);
+            textBox3.TabIndex = 16;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(8, 191);
+            label4.Name = "label4";
+            label4.Size = new Size(130, 20);
+            label4.TabIndex = 15;
+            label4.Text = "Inscrição estadual:";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(94, 147);
+            label3.Name = "label3";
+            label3.Size = new Size(44, 20);
+            label3.TabIndex = 14;
+            label3.Text = "CNPJ:";
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(144, 95);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(153, 27);
+            textBox2.TabIndex = 13;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(144, 46);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(153, 27);
+            textBox1.TabIndex = 12;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(64, 100);
+            label2.Name = "label2";
+            label2.Size = new Size(74, 20);
+            label2.TabIndex = 11;
+            label2.Text = "Endereço:";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(85, 50);
+            label1.Name = "label1";
+            label1.Size = new Size(53, 20);
+            label1.TabIndex = 10;
+            label1.Text = "Nome:";
+            // 
+            // btnNovo
+            // 
+            btnNovo.Location = new Point(8, 295);
+            btnNovo.Name = "btnNovo";
+            btnNovo.Size = new Size(94, 40);
+            btnNovo.TabIndex = 20;
+            btnNovo.Text = "Novo";
+            btnNovo.UseVisualStyleBackColor = true;
+            // 
+            // btnExcluir
+            // 
+            btnExcluir.Location = new Point(208, 295);
+            btnExcluir.Name = "btnExcluir";
+            btnExcluir.Size = new Size(94, 40);
+            btnExcluir.TabIndex = 21;
+            btnExcluir.Text = "Excluir";
+            btnExcluir.UseVisualStyleBackColor = true;
+            // 
+            // btnSalvar
+            // 
+            btnSalvar.Location = new Point(108, 295);
+            btnSalvar.Name = "btnSalvar";
+            btnSalvar.Size = new Size(94, 40);
+            btnSalvar.TabIndex = 22;
+            btnSalvar.Text = "Salvar";
+            btnSalvar.UseVisualStyleBackColor = true;
+            // 
+            // lvClientes
+            // 
+            lvClientes.Columns.AddRange(new ColumnHeader[] { id, nome, endereco, cnpj, incricaoEstadual, telefone });
+            lvClientes.Location = new Point(367, 40);
+            lvClientes.Name = "lvClientes";
+            lvClientes.Size = new Size(521, 375);
+            lvClientes.TabIndex = 11;
+            lvClientes.UseCompatibleStateImageBehavior = false;
+            lvClientes.View = View.Details;
+            // 
+            // id
+            // 
+            id.Text = "id";
+            id.Width = 25;
+            // 
+            // nome
+            // 
+            nome.Text = "Nome";
+            nome.Width = 100;
+            // 
+            // endereco
+            // 
+            endereco.Text = "Endereço";
+            endereco.Width = 100;
+            // 
+            // cnpj
+            // 
+            cnpj.Text = "CNPJ";
+            cnpj.Width = 80;
+            // 
+            // incricaoEstadual
+            // 
+            incricaoEstadual.Text = "Inscrição Estadual";
+            incricaoEstadual.Width = 80;
+            // 
+            // telefone
+            // 
+            telefone.Text = "Telefone";
+            telefone.Width = 80;
             // 
             // Cliente
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(373, 359);
-            Controls.Add(textBox5);
-            Controls.Add(label5);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Margin = new Padding(3, 2, 3, 2);
+            ClientSize = new Size(913, 479);
+            Controls.Add(lvClientes);
+            Controls.Add(groupBox1);
             Name = "Cliente";
             Text = "Cliente";
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
-        private Label label2;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private Label label3;
-        private Label label4;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private Label label5;
+        private GroupBox groupBox1;
         private TextBox textBox5;
+        private Label label5;
+        private TextBox textBox4;
+        private TextBox textBox3;
+        private Label label4;
+        private Label label3;
+        private TextBox textBox2;
+        private TextBox textBox1;
+        private Label label2;
+        private Label label1;
+        private Button btnSalvar;
+        private Button btnExcluir;
+        private Button btnNovo;
+        private ListView lvClientes;
+        private ColumnHeader id;
+        private ColumnHeader nome;
+        private ColumnHeader endereco;
+        private ColumnHeader cnpj;
+        private ColumnHeader incricaoEstadual;
+        private ColumnHeader telefone;
     }
 }
