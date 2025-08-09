@@ -34,6 +34,7 @@
             valor = new ColumnHeader();
             litros = new ColumnHeader();
             codbarras = new ColumnHeader();
+            custo = new ColumnHeader();
             btAdd = new Button();
             groupBox1 = new GroupBox();
             txtId = new TextBox();
@@ -47,12 +48,13 @@
             lblNome = new Label();
             btDel = new Button();
             btNovo = new Button();
+            margem = new ColumnHeader();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // lvProdutos
             // 
-            lvProdutos.Columns.AddRange(new ColumnHeader[] { id, nome, valor, litros, codbarras });
+            lvProdutos.Columns.AddRange(new ColumnHeader[] { id, nome, valor, litros, codbarras, custo, margem });
             lvProdutos.Location = new Point(374, 77);
             lvProdutos.Margin = new Padding(3, 4, 3, 4);
             lvProdutos.Name = "lvProdutos";
@@ -87,6 +89,11 @@
             // 
             codbarras.Text = "Código de barras";
             codbarras.Width = 250;
+            // 
+            // custo
+            // 
+            custo.Text = "Custo";
+            custo.Width = 80;
             // 
             // btAdd
             // 
@@ -217,6 +224,11 @@
             btNovo.UseVisualStyleBackColor = true;
             btNovo.Click += btNovo_Click;
             // 
+            // margem
+            // 
+            margem.Text = "Margem Lucro";
+            margem.Width = 100;
+            // 
             // Produto
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -254,5 +266,7 @@
         private Button btDel;
         private TextBox txtId;
         private Button btNovo;
+        private ColumnHeader custo;
+        private ColumnHeader margem;
     }
 }

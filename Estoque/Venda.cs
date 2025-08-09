@@ -185,12 +185,13 @@ namespace Estoque
 
             if (ChecarCampos())
             {
-                Vendas v = new Vendas(
-                    0,
-                    Int32.Parse(txtId.Text),
-                    total,
-                    cbFormaPagamento.Text,
-                    DateTime.Now.ToString(), txtObs.Text);
+                Vendas v = new Vendas();
+                v.id_usuario = 0;
+                v.id_cliente = Int32.Parse(txtIdCliente.Text);
+                v.valor_total = total;
+                v.forma_pagamento = cbFormaPagamento.Text;
+                v.tstamp = DateTime.Now.ToString();
+                v.obs = txtObs.Text;                    
 
                 try
                 {
@@ -202,7 +203,7 @@ namespace Estoque
                 {
                     MessageBox.Show(ex.Message);
                 }
-                idVen = _context.Vendas.LastOrDefault().id;
+                idVen = v.id;
 
 
                 foreach (ListViewItem i in listProd.Items)
@@ -211,15 +212,14 @@ namespace Estoque
                     {
 
                         _context = new DbConnection();
-                        ItemVenda iv = new ItemVenda(
-                                            idVen,
-                                            0,
-                                            Int32.Parse(txtIdCliente.Text),
-                                            Int32.Parse(i.SubItems[0].Text),
-                                            decimal.Parse(i.SubItems[3].Text),
-                                            Int32.Parse(i.SubItems[2].Text),
-                                            DateTime.Now.ToString()
-                                            );
+                        ItemVenda iv = new ItemVenda();
+                        iv.id_venda = idVen;
+                        iv.id_usuario = 0;
+                        iv.id_cliente = Int32.Parse(txtIdCliente.Text);
+                        iv.id_produto = Int32.Parse(i.SubItems[0].Text);
+                        iv.valor = decimal.Parse(i.SubItems[3].Text);
+                        iv.quantidade = Int32.Parse(i.SubItems[2].Text);
+                        iv.tstamp = DateTime.Now.ToString();
 
                         _context.ItemVenda.Add(iv);
                         _context.SaveChanges();
@@ -279,6 +279,7 @@ namespace Estoque
             txtQtd.Clear();
             txtTotal.Clear();
             txtIdProdSel.Clear();
+            cbFormaPagamento.Text = "";
         }
     }
 }

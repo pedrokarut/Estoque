@@ -18,6 +18,8 @@ namespace Estoque.Classes
 
         public string cod_barras { get; set; }
 
+        public double custo { get; set; }
+
         public Produtos(string name,  double value, int litros, string cod_barras)
         {
             this.name = name;

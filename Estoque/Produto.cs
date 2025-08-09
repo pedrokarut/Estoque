@@ -25,7 +25,16 @@ namespace Estoque
             foreach (var prod in _context.Produtos.OrderBy(p => p.id))
             {
                 lvProdutos.Items.Add(new ListViewItem
-                (new String[] { prod.id.ToString(), prod.name, prod.value.ToString(), prod.litros.ToString(), prod.cod_barras }));
+                (new String[] 
+                {   prod.id.ToString(), 
+                    prod.name, 
+                    prod.value.ToString(), 
+                    prod.litros.ToString(), 
+                    prod.cod_barras, 
+                    prod.custo.ToString(),
+                    (((prod.value - prod.custo)/100) * 100).ToString() + "%"
+                }
+                ));
             }
 
 

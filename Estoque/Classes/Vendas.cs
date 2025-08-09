@@ -21,14 +21,9 @@ namespace Estoque.Classes
 
         public string obs {  get; set; }
 
-        public Vendas(int idusu,  int idcli, decimal v, string fp, string ts, string obs)
+        public Vendas()
         {
-            this.id_usuario = idusu;
-            this.id_cliente = idcli;
-            this.valor_total = v;
-            this.forma_pagamento = fp;
-            this.tstamp = ts;
-            this.obs = obs;
+
         }
 
     }

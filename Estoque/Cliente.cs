@@ -118,19 +118,26 @@ namespace Estoque
 
         public void CarregaListView()
         {
-            _context = new DbConnection();
-            lvClientes.Items.Clear();
-
-            foreach (var prod in _context.Clientes.OrderBy(p => p.id))
+            try
             {
-                lvClientes.Items.Add(new ListViewItem
-                (new String[] { prod.id.ToString(),
-                                prod.nome,
-                                prod.endereco,
-                                prod.cnpj,
-                                prod.incricao_estadual,
-                                prod.telefone
-                }));
+                _context = new DbConnection();
+                lvClientes.Items.Clear();
+
+                foreach (var prod in _context.Clientes.OrderBy(p => p.id))
+                {
+                    lvClientes.Items.Add(new ListViewItem
+                    (new String[] { prod.id.ToString(),
+                                    prod.nome,
+                                    prod.endereco,
+                                    prod.cnpj,
+                                    prod.incricao_estadual,
+                                    prod.telefone
+                    }));
+                }
+            }
+            catch(Exception ex) 
+            {
+                MessageBox.Show(ex.Message);
             }
 
 

@@ -15,24 +15,30 @@ namespace Estoque.Classes
 
         public int id_cliente { get; set; }
 
-        public int id_produto   { get; set; }
+        public int id_produto { get; set; }
 
         public decimal valor { get; set; }
 
-        public int qtd {  get; set; }
+        public int quantidade {  get; set; }
 
         public string tstamp { get; set; }
 
-        public ItemVenda(int idven,  int idusu, int idcli , int idpro, decimal v, int qtd, string ts)
+        //public ItemVenda(int idven,  int idusu, int idcli , int idpro, decimal v, int qtd, string ts)
+        //{
+         //   this.id_venda = idven;
+         //   this.id_usuario = idusu;
+         //   this.id_cliente = idcli;
+         //   this.id_produto = idpro;
+         //   this.valor = v;
+         //   this.quantidade = qtd;
+         //   this.tstamp = ts;
+        //}
+
+        public ItemVenda()
         {
-            this.id_venda = idven;
-            this.id_usuario = idusu;
-            this.id_cliente = idcli;
-            this.id_produto = idpro;
-            this.valor = v;
-            this.qtd = qtd;
-            this.tstamp = ts;
+
         }
+
 
     }
 }
