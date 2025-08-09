@@ -16,20 +16,27 @@ namespace Estoque
         public static Venda instance;
         public ListView listProd;
         private int qtdAbreProd = 0;
+        private int qtdAbreCli = 0;
         private Produto frmProd;
+        private Cliente frmCli;
         public TextBox txtId;
         public TextBox txtNome;
         public TextBox txtMargem;
+        public TextBox txtIdCliente;
+        public TextBox txtNomeCliente;
 
 
         public Venda()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
             instance = this;
             listProd = listView1;
             txtId = txtIdProdSel;
             txtNome = txtNomeProd;
             txtMargem = txtMargemSel;
+            txtIdCliente = txtIdCli;
+            txtNomeCliente = txtNomeCli;
         }
 
         private void LimparCamposProdutos()
@@ -46,6 +53,7 @@ namespace Estoque
             if (qtdAbreProd == 0)
             {
                 frmProd = new Produto();
+                frmProd.StartPosition = FormStartPosition.CenterScreen;
                 frmProd.ShowDialog();
             }
             else
@@ -132,6 +140,20 @@ namespace Estoque
             else
             {
                 MessageBox.Show("Quantidade não pode ser vazia");
+            }
+        }
+
+        private void btnBuscaCliente_Click(object sender, EventArgs e)
+        {
+            if (qtdAbreCli == 0)
+            {
+                frmCli = new Cliente();
+                frmCli.StartPosition = FormStartPosition.CenterScreen;
+                frmCli.ShowDialog();
+            }
+            else
+            {
+                Cliente.instance.ShowDialog();
             }
         }
     }

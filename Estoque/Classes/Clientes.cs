@@ -8,19 +8,19 @@ namespace Estoque.Classes
     public class Clientes
     {
         [Key]
-        public int id { get; private set; }
+        public int id { get; set; }
 
-        public string nome { get; private set; }
+        public string nome { get; set; }
 
-        public string endereco { get; private set; }
+        public string endereco { get; set; }
 
-        public string cnpj { get; private set; }
+        public string cnpj { get; set; }
 
-        public string incricao_estadual { get; private set; }
+        public string incricao_estadual { get; set; }
 
-        public string telefone { get; private set; }
+        public string telefone { get; set; }
 
-        public string tstamp { get; private set; }
+        public string tstamp { get; set; }
 
 
 

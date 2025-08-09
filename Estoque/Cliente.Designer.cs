@@ -29,19 +29,20 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
-            textBox5 = new TextBox();
+            txtId = new TextBox();
+            btnSalvar = new Button();
+            btnExcluir = new Button();
+            btnNovo = new Button();
+            txtTelefone = new TextBox();
             label5 = new Label();
-            textBox4 = new TextBox();
-            textBox3 = new TextBox();
+            txtInsc = new TextBox();
+            txtCnpj = new TextBox();
             label4 = new Label();
             label3 = new Label();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            txtEnd = new TextBox();
+            txtNome = new TextBox();
             label2 = new Label();
             label1 = new Label();
-            btnNovo = new Button();
-            btnExcluir = new Button();
-            btnSalvar = new Button();
             lvClientes = new ListView();
             id = new ColumnHeader();
             nome = new ColumnHeader();
@@ -54,17 +55,18 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(txtId);
             groupBox1.Controls.Add(btnSalvar);
             groupBox1.Controls.Add(btnExcluir);
             groupBox1.Controls.Add(btnNovo);
-            groupBox1.Controls.Add(textBox5);
+            groupBox1.Controls.Add(txtTelefone);
             groupBox1.Controls.Add(label5);
-            groupBox1.Controls.Add(textBox4);
-            groupBox1.Controls.Add(textBox3);
+            groupBox1.Controls.Add(txtInsc);
+            groupBox1.Controls.Add(txtCnpj);
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(textBox2);
-            groupBox1.Controls.Add(textBox1);
+            groupBox1.Controls.Add(txtEnd);
+            groupBox1.Controls.Add(txtNome);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
             groupBox1.Location = new Point(24, 26);
@@ -73,12 +75,51 @@
             groupBox1.TabIndex = 10;
             groupBox1.TabStop = false;
             // 
-            // textBox5
+            // txtId
             // 
-            textBox5.Location = new Point(144, 240);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(153, 27);
-            textBox5.TabIndex = 19;
+            txtId.BackColor = SystemColors.InactiveCaption;
+            txtId.Enabled = false;
+            txtId.Location = new Point(6, 26);
+            txtId.Name = "txtId";
+            txtId.Size = new Size(30, 27);
+            txtId.TabIndex = 23;
+            // 
+            // btnSalvar
+            // 
+            btnSalvar.Location = new Point(108, 295);
+            btnSalvar.Name = "btnSalvar";
+            btnSalvar.Size = new Size(94, 40);
+            btnSalvar.TabIndex = 22;
+            btnSalvar.Text = "Salvar";
+            btnSalvar.UseVisualStyleBackColor = true;
+            btnSalvar.Click += btnSalvar_Click;
+            // 
+            // btnExcluir
+            // 
+            btnExcluir.Location = new Point(208, 295);
+            btnExcluir.Name = "btnExcluir";
+            btnExcluir.Size = new Size(94, 40);
+            btnExcluir.TabIndex = 21;
+            btnExcluir.Text = "Excluir";
+            btnExcluir.UseVisualStyleBackColor = true;
+            btnExcluir.Click += btnExcluir_Click;
+            // 
+            // btnNovo
+            // 
+            btnNovo.Location = new Point(8, 295);
+            btnNovo.Name = "btnNovo";
+            btnNovo.Size = new Size(94, 40);
+            btnNovo.TabIndex = 20;
+            btnNovo.Text = "Novo";
+            btnNovo.UseVisualStyleBackColor = true;
+            btnNovo.Click += btnNovo_Click;
+            // 
+            // txtTelefone
+            // 
+            txtTelefone.Location = new Point(144, 240);
+            txtTelefone.Name = "txtTelefone";
+            txtTelefone.Size = new Size(153, 27);
+            txtTelefone.TabIndex = 19;
             // 
             // label5
             // 
@@ -89,19 +130,19 @@
             label5.TabIndex = 18;
             label5.Text = "Telefone:";
             // 
-            // textBox4
+            // txtInsc
             // 
-            textBox4.Location = new Point(144, 188);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(153, 27);
-            textBox4.TabIndex = 17;
+            txtInsc.Location = new Point(144, 188);
+            txtInsc.Name = "txtInsc";
+            txtInsc.Size = new Size(153, 27);
+            txtInsc.TabIndex = 17;
             // 
-            // textBox3
+            // txtCnpj
             // 
-            textBox3.Location = new Point(145, 142);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(153, 27);
-            textBox3.TabIndex = 16;
+            txtCnpj.Location = new Point(145, 142);
+            txtCnpj.Name = "txtCnpj";
+            txtCnpj.Size = new Size(153, 27);
+            txtCnpj.TabIndex = 16;
             // 
             // label4
             // 
@@ -121,19 +162,19 @@
             label3.TabIndex = 14;
             label3.Text = "CNPJ:";
             // 
-            // textBox2
+            // txtEnd
             // 
-            textBox2.Location = new Point(144, 95);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(153, 27);
-            textBox2.TabIndex = 13;
+            txtEnd.Location = new Point(144, 95);
+            txtEnd.Name = "txtEnd";
+            txtEnd.Size = new Size(153, 27);
+            txtEnd.TabIndex = 13;
             // 
-            // textBox1
+            // txtNome
             // 
-            textBox1.Location = new Point(144, 46);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(153, 27);
-            textBox1.TabIndex = 12;
+            txtNome.Location = new Point(144, 46);
+            txtNome.Name = "txtNome";
+            txtNome.Size = new Size(153, 27);
+            txtNome.TabIndex = 12;
             // 
             // label2
             // 
@@ -153,33 +194,6 @@
             label1.TabIndex = 10;
             label1.Text = "Nome:";
             // 
-            // btnNovo
-            // 
-            btnNovo.Location = new Point(8, 295);
-            btnNovo.Name = "btnNovo";
-            btnNovo.Size = new Size(94, 40);
-            btnNovo.TabIndex = 20;
-            btnNovo.Text = "Novo";
-            btnNovo.UseVisualStyleBackColor = true;
-            // 
-            // btnExcluir
-            // 
-            btnExcluir.Location = new Point(208, 295);
-            btnExcluir.Name = "btnExcluir";
-            btnExcluir.Size = new Size(94, 40);
-            btnExcluir.TabIndex = 21;
-            btnExcluir.Text = "Excluir";
-            btnExcluir.UseVisualStyleBackColor = true;
-            // 
-            // btnSalvar
-            // 
-            btnSalvar.Location = new Point(108, 295);
-            btnSalvar.Name = "btnSalvar";
-            btnSalvar.Size = new Size(94, 40);
-            btnSalvar.TabIndex = 22;
-            btnSalvar.Text = "Salvar";
-            btnSalvar.UseVisualStyleBackColor = true;
-            // 
             // lvClientes
             // 
             lvClientes.Columns.AddRange(new ColumnHeader[] { id, nome, endereco, cnpj, incricaoEstadual, telefone });
@@ -189,6 +203,8 @@
             lvClientes.TabIndex = 11;
             lvClientes.UseCompatibleStateImageBehavior = false;
             lvClientes.View = View.Details;
+            lvClientes.Click += lvClientes_Click;
+            lvClientes.DoubleClick += lvClientes_DoubleClick;
             // 
             // id
             // 
@@ -237,14 +253,14 @@
         #endregion
 
         private GroupBox groupBox1;
-        private TextBox textBox5;
+        private TextBox txtTelefone;
         private Label label5;
-        private TextBox textBox4;
-        private TextBox textBox3;
+        private TextBox txtInsc;
+        private TextBox txtCnpj;
         private Label label4;
         private Label label3;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox txtEnd;
+        private TextBox txtNome;
         private Label label2;
         private Label label1;
         private Button btnSalvar;
@@ -257,5 +273,6 @@
         private ColumnHeader cnpj;
         private ColumnHeader incricaoEstadual;
         private ColumnHeader telefone;
+        private TextBox txtId;
     }
 }
