@@ -16,6 +16,10 @@ namespace Estoque.Databse
 
         public DbSet<Clientes> Clientes { get; set; }
 
+        public DbSet<Vendas> Vendas { get; set; }
+
+        public DbSet<ItemVenda> ItemVenda { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         => optionsBuilder.UseNpgsql("Host=ep-flat-frog-ack9fft2-pooler.sa-east-1.aws.neon.tech; Database=neondb; Username=neondb_owner; Password=npg_Zokm0BVp2XAT; SSL Mode=VerifyFull; Channel Binding=Require;");
 

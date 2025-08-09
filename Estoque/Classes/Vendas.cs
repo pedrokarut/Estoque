@@ -10,14 +10,25 @@ namespace Estoque.Classes
         [Key]
         public int id { get; private set; }
 
-        public string name { get; private set; }
+        public int id_usuario { get; set; }
+        public int id_cliente { get; set; }
 
-        public double value { get; private set; }
+        public decimal valor_total { get; set; }
 
-        public Vendas(string name,  double value)
+        public string forma_pagamento   { get; set; }
+
+        public string tstamp { get; set; }
+
+        public string obs {  get; set; }
+
+        public Vendas(int idusu,  int idcli, decimal v, string fp, string ts, string obs)
         {
-            this.name = name;
-            this.value = value;
+            this.id_usuario = idusu;
+            this.id_cliente = idcli;
+            this.valor_total = v;
+            this.forma_pagamento = fp;
+            this.tstamp = ts;
+            this.obs = obs;
         }
 
     }

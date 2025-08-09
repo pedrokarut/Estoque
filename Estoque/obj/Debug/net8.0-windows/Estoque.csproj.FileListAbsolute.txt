@@ -37,3 +37,4 @@ C:\Users\pe\Teste\Estoque\Estoque\bin\Debug\net8.0-windows\Microsoft.Extensions.
 C:\Users\pe\Teste\Estoque\Estoque\bin\Debug\net8.0-windows\Npgsql.EntityFrameworkCore.PostgreSQL.dll
 C:\Users\pe\Teste\Estoque\Estoque\bin\Debug\net8.0-windows\System.Diagnostics.DiagnosticSource.dll
 C:\Users\pe\Teste\Estoque\Estoque\obj\Debug\net8.0-windows\Estoque.Fornecedor.resources
+C:\Users\pe\Teste\Estoque\Estoque\obj\Debug\net8.0-windows\Estoque.Properties.Resources.resources

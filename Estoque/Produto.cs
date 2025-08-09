@@ -177,7 +177,7 @@ namespace Estoque
                 _context = new DbConnection();
                 var p = _context.Produtos.FirstOrDefault(p => p.id == id);
                 Venda.instance.txtNome.Text = p.name;
-                Venda.instance.txtMargem.Text = "0.05";
+                Venda.instance.txtMargem.Text = p.value.ToString();
                 Venda.instance.Show();
             }
             

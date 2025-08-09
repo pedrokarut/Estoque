@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Estoque.Classes;
+using Estoque.Databse;
 
 namespace Estoque
 {
@@ -24,6 +25,9 @@ namespace Estoque
         public TextBox txtMargem;
         public TextBox txtIdCliente;
         public TextBox txtNomeCliente;
+        private decimal total = 0;
+        private int idVen = 0;
+        private DbConnection _context = new DbConnection();
 
 
         public Venda()
@@ -156,5 +160,128 @@ namespace Estoque
                 Cliente.instance.ShowDialog();
             }
         }
+
+        private void btnCalcular_Click(object sender, EventArgs e)
+        {
+            
+            if (listProd.Items.Count > 0)
+            {
+                foreach (ListViewItem i in listProd.Items)
+                {
+
+                    total += decimal.Parse(i.SubItems[3].Text);
+                }
+                txtTotal.Text = total.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Sacola de produtos vazia!");
+            }
+        }
+
+        private void btnFinalizar_Click(object sender, EventArgs e)
+        {
+            
+
+            if (ChecarCampos())
+            {
+                Vendas v = new Vendas(
+                    0,
+                    Int32.Parse(txtId.Text),
+                    total,
+                    cbFormaPagamento.Text,
+                    DateTime.Now.ToString(), txtObs.Text);
+
+                try
+                {
+                    _context = new DbConnection();
+                    _context.Vendas.Add(v);
+                    _context.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                idVen = _context.Vendas.LastOrDefault().id;
+
+
+                foreach (ListViewItem i in listProd.Items)
+                {
+                    try
+                    {
+
+                        _context = new DbConnection();
+                        ItemVenda iv = new ItemVenda(
+                                            idVen,
+                                            0,
+                                            Int32.Parse(txtIdCliente.Text),
+                                            Int32.Parse(i.SubItems[0].Text),
+                                            decimal.Parse(i.SubItems[3].Text),
+                                            Int32.Parse(i.SubItems[2].Text),
+                                            DateTime.Now.ToString()
+                                            );
+
+                        _context.ItemVenda.Add(iv);
+                        _context.SaveChanges();
+                    }
+                    catch(Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+
+                MessageBox.Show("Sucesso");
+                LimparCampos();
+
+            }
+                
+            
+        }
+
+        private bool ChecarCampos()
+        {
+            if (txtIdCliente.Text == "")
+            {
+                MessageBox.Show("Cliente não pode ser vazio!");
+                txtIdCliente.Focus();
+                return false;
+            }
+            else if (cbFormaPagamento.Text == "")
+            {
+                MessageBox.Show("Forma de pagamento não pode ser vazia!");
+                cbFormaPagamento.Focus();
+                return false;
+            }
+            else if (listProd.Items.Count <= 0)
+            {
+                MessageBox.Show("Deve haver produtos!");
+                listProd.Focus();
+                return false;
+            }
+            else if (txtTotal.Text == "")
+            {
+                MessageBox.Show("Deve realizar o cálculo antes");
+                btnCalcular.Focus();
+                return false;
+            }
+            else return true;
+        }
+
+        private void LimparCampos()
+        {
+            txtId.Clear();
+            txtIdCliente.Clear();
+            txtMargem.Clear();
+            txtNome.Clear();
+            txtNomeCliente.Clear();
+            txtNomeProd.Clear();
+            txtObs.Clear();
+            txtQtd.Clear();
+            txtTotal.Clear();
+            txtIdProdSel.Clear();
+        }
     }
 }
+
+
+
