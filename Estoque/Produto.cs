@@ -9,6 +9,8 @@ namespace Estoque
     {
         private DbConnection _context = new DbConnection();
         public static Produto instance;
+        private Fornecedor frmForn;
+        private int qtdAbreProd = 0;
         public Produto()
         {
             InitializeComponent();
@@ -25,18 +27,21 @@ namespace Estoque
             foreach (var prod in _context.Produtos.OrderBy(p => p.id))
             {
                 lvProdutos.Items.Add(new ListViewItem
-                (new String[] 
-                {   prod.id.ToString(), 
-                    prod.name, 
-                    prod.value.ToString(), 
-                    prod.litros.ToString(), 
-                    prod.cod_barras, 
+                (new String[]
+                {   prod.id.ToString(),
+                    prod.name,
+                    prod.value.ToString(),
+                    prod.litros.ToString(),
+                    prod.cod_barras,
                     prod.custo.ToString(),
+                    prod.margem.ToString(),
+                    prod.id_fornecedor.ToString(),
+                    prod.qtd.ToString(),
                     (((prod.value - prod.custo)/100) * 100).ToString() + "%"
                 }
                 ));
             }
-
+            //fazer cálculo da margem de lucro
 
         }
 
@@ -47,11 +52,16 @@ namespace Estoque
                 if (ChecarCampos())
                 {
                     _context = new DbConnection();
-                    Produtos p = new Produtos(
-                        txtNome.Text,
-                        double.Parse(txtValor.Text),
-                        Int32.Parse(txtLitros.Text),
-                        txtCodBarras.Text);
+                    Produtos p = new Produtos();
+                    p.name = txtNome.Text;
+                    p.value = double.Parse(txtValor.Text);
+                    p.litros = Int32.Parse(txtLitros.Text);
+                    p.cod_barras = txtCodBarras.Text;
+                    p.custo = double.Parse(txtCusto.Text);
+                    p.margem = 0;
+                    p.id_fornecedor = 0;
+                    p.qtd = Int32.Parse(txtQtd.Text);
+
                     _context.Produtos.Add(p);
                     _context.SaveChangesAsync();
                     CarregaListView();
@@ -73,6 +83,10 @@ namespace Estoque
                         p.value = double.Parse(txtValor.Text);
                         p.name = txtNome.Text;
                         p.cod_barras = txtCodBarras.Text;
+                        p.custo = double.Parse(txtCusto.Text);
+                        p.margem = 0;
+                        p.id_fornecedor = 0; // Int32.Parse(txtIdForn.Text);
+                        p.qtd = Int32.Parse(txtQtd.Text);
 
                         _context.Produtos.Update(p);
                         _context.SaveChangesAsync();
@@ -113,6 +127,24 @@ namespace Estoque
                 txtCodBarras.Focus();
                 return false;
             }
+            else if (txtCusto.Text == "")
+            {
+                MessageBox.Show("Custo não pode ser vazio!");
+                txtCusto.Focus();
+                return false;
+            }
+            else if (txtQtd.Text == "")
+            {
+                MessageBox.Show("Quantidade não pode ser vazia!");
+                txtQtd.Focus();
+                return false;
+            }
+            else if (txtFornecedor.Text == "")
+            {
+                MessageBox.Show("Fornecedor não pode ser vazio!");
+                txtFornecedor.Focus();
+                return false;
+            }
             else return true;
         }
 
@@ -131,6 +163,10 @@ namespace Estoque
                     txtValor.Text = prod.value.ToString();
                     txtLitros.Text = prod.litros.ToString();
                     txtCodBarras.Text = prod.cod_barras.ToString();
+                    txtCusto.Text = prod.custo.ToString();
+                    txtQtd.Text = prod.qtd.ToString();
+                    txtMargem.Text = prod.margem.ToString();
+                    txtIdForn.Text = prod.id_fornecedor.ToString();
                 }
             }
         }
@@ -156,6 +192,11 @@ namespace Estoque
             txtNome.Clear();
             txtId.Clear();
             txtValor.Clear();
+            txtCusto.Clear();
+            txtFornecedor.Clear();
+            txtIdForn.Clear();
+            txtQtd.Clear();
+            txtMargem.Clear();
         }
 
         private void btDel_Click(object sender, EventArgs e)
@@ -177,7 +218,7 @@ namespace Estoque
 
         private void lvProdutos_DoubleClick(object sender, EventArgs e)
         {
-            if(lvProdutos.SelectedItems[0].Text != "")
+            if (lvProdutos.SelectedItems[0].Text != "")
             {
                 //Venda v = new Venda(Int32.Parse(lvProdutos.SelectedItems[0].Text), "prod");
                 this.Hide();
@@ -189,7 +230,25 @@ namespace Estoque
                 Venda.instance.txtMargem.Text = p.value.ToString();
                 Venda.instance.Show();
             }
-            
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnForn_Click(object sender, EventArgs e)
+        {
+            if (qtdAbreProd == 0)
+            {
+                frmForn = new Fornecedor();
+                frmForn.ShowDialog();
+            }
+            else
+            {
+                Fornecedor.instance.ShowDialog();
+            }
         }
     }
 }

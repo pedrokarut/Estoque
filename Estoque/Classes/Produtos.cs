@@ -20,13 +20,14 @@ namespace Estoque.Classes
 
         public double custo { get; set; }
 
-        public Produtos(string name,  double value, int litros, string cod_barras)
-        {
-            this.name = name;
-            this.value = value;
-            this.litros = litros;
-            this.cod_barras = cod_barras;
-        }
+        public double margem { get; set; }
+
+        public int id_fornecedor { get; set; }
+
+        public int qtd {  get; set; }
+
+        public Produtos()
+        { }
 
     }
 }
