@@ -10,14 +10,16 @@ namespace Estoque.Classes
         [Key]
         public int id { get; private set; }
 
-        public string name { get; private set; }
+        public int id_prod { get;  set; }
 
-        public double value { get; private set; }
+        public int id_fornecedor { get; set; }
 
-        public Compras(string name,  double value)
+        public int qtd { get;  set; }
+
+        public string tstamp { get; set; }
+
+        public Compras()
         {
-            this.name = name;
-            this.value = value;
         }
 
     }

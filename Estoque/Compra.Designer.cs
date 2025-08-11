@@ -28,117 +28,190 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            label2 = new Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Compra));
+            groupBox1 = new GroupBox();
+            txtIdForn = new TextBox();
+            txtIdProd = new TextBox();
+            btnForn = new Button();
+            btnProd = new Button();
+            btnCancelar = new Button();
+            btnSalvar = new Button();
+            txtForn = new TextBox();
+            txtQtd = new TextBox();
+            txtProd = new TextBox();
             label3 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            button1 = new Button();
-            button2 = new Button();
+            label2 = new Label();
+            label1 = new Label();
+            lvCompras = new ListView();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
-            // label1
+            // groupBox1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(98, 47);
-            label1.Name = "label1";
-            label1.Size = new Size(53, 15);
-            label1.TabIndex = 0;
-            label1.Text = "Produto:";
+            groupBox1.Controls.Add(txtIdForn);
+            groupBox1.Controls.Add(txtIdProd);
+            groupBox1.Controls.Add(btnForn);
+            groupBox1.Controls.Add(btnProd);
+            groupBox1.Controls.Add(btnCancelar);
+            groupBox1.Controls.Add(btnSalvar);
+            groupBox1.Controls.Add(txtForn);
+            groupBox1.Controls.Add(txtQtd);
+            groupBox1.Controls.Add(txtProd);
+            groupBox1.Controls.Add(label3);
+            groupBox1.Controls.Add(label2);
+            groupBox1.Controls.Add(label1);
+            groupBox1.Location = new Point(12, 26);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(303, 212);
+            groupBox1.TabIndex = 8;
+            groupBox1.TabStop = false;
             // 
-            // label2
+            // txtIdForn
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(76, 75);
-            label2.Name = "label2";
-            label2.Size = new Size(72, 15);
-            label2.TabIndex = 1;
-            label2.Text = "Quantidade:";
+            txtIdForn.Enabled = false;
+            txtIdForn.Location = new Point(6, 100);
+            txtIdForn.Name = "txtIdForn";
+            txtIdForn.Size = new Size(32, 27);
+            txtIdForn.TabIndex = 17;
+            txtIdForn.UseWaitCursor = true;
+            txtIdForn.Visible = false;
+            // 
+            // txtIdProd
+            // 
+            txtIdProd.Enabled = false;
+            txtIdProd.Location = new Point(6, 27);
+            txtIdProd.Name = "txtIdProd";
+            txtIdProd.Size = new Size(32, 27);
+            txtIdProd.TabIndex = 16;
+            txtIdProd.Visible = false;
+            // 
+            // btnForn
+            // 
+            btnForn.Image = (Image)resources.GetObject("btnForn.Image");
+            btnForn.Location = new Point(251, 99);
+            btnForn.Name = "btnForn";
+            btnForn.Size = new Size(37, 29);
+            btnForn.TabIndex = 15;
+            btnForn.UseVisualStyleBackColor = true;
+            btnForn.Click += btnForn_Click;
+            // 
+            // btnProd
+            // 
+            btnProd.Image = (Image)resources.GetObject("btnProd.Image");
+            btnProd.Location = new Point(252, 26);
+            btnProd.Name = "btnProd";
+            btnProd.Size = new Size(37, 29);
+            btnProd.TabIndex = 14;
+            btnProd.UseVisualStyleBackColor = true;
+            btnProd.Click += btnProd_Click;
+            // 
+            // btnCancelar
+            // 
+            btnCancelar.Location = new Point(175, 143);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(113, 51);
+            btnCancelar.TabIndex = 13;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
+            // 
+            // btnSalvar
+            // 
+            btnSalvar.Location = new Point(41, 143);
+            btnSalvar.Name = "btnSalvar";
+            btnSalvar.Size = new Size(115, 51);
+            btnSalvar.TabIndex = 12;
+            btnSalvar.Text = "Salvar";
+            btnSalvar.UseVisualStyleBackColor = true;
+            btnSalvar.Click += btnSalvar_Click;
+            // 
+            // txtForn
+            // 
+            txtForn.Location = new Point(137, 100);
+            txtForn.Name = "txtForn";
+            txtForn.Size = new Size(111, 27);
+            txtForn.TabIndex = 11;
+            // 
+            // txtQtd
+            // 
+            txtQtd.Location = new Point(137, 64);
+            txtQtd.Name = "txtQtd";
+            txtQtd.Size = new Size(152, 27);
+            txtQtd.TabIndex = 10;
+            // 
+            // txtProd
+            // 
+            txtProd.Location = new Point(137, 27);
+            txtProd.Name = "txtProd";
+            txtProd.Size = new Size(111, 27);
+            txtProd.TabIndex = 9;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(45, 110);
+            label3.Location = new Point(41, 100);
             label3.Name = "label3";
-            label3.Size = new Size(101, 15);
-            label3.TabIndex = 2;
-            label3.Text = "Margem de lucro:";
+            label3.Size = new Size(87, 20);
+            label3.TabIndex = 8;
+            label3.Text = "Fornecedor:";
             // 
-            // textBox1
+            // label2
             // 
-            textBox1.Location = new Point(174, 47);
-            textBox1.Margin = new Padding(3, 2, 3, 2);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(110, 23);
-            textBox1.TabIndex = 3;
+            label2.AutoSize = true;
+            label2.Location = new Point(41, 64);
+            label2.Name = "label2";
+            label2.Size = new Size(90, 20);
+            label2.TabIndex = 7;
+            label2.Text = "Quantidade:";
             // 
-            // textBox2
+            // label1
             // 
-            textBox2.Location = new Point(174, 75);
-            textBox2.Margin = new Padding(3, 2, 3, 2);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(110, 23);
-            textBox2.TabIndex = 4;
+            label1.AutoSize = true;
+            label1.Location = new Point(66, 27);
+            label1.Name = "label1";
+            label1.Size = new Size(65, 20);
+            label1.TabIndex = 6;
+            label1.Text = "Produto:";
             // 
-            // textBox3
+            // lvCompras
             // 
-            textBox3.Location = new Point(174, 110);
-            textBox3.Margin = new Padding(3, 2, 3, 2);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(110, 23);
-            textBox3.TabIndex = 5;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(45, 219);
-            button1.Margin = new Padding(3, 2, 3, 2);
-            button1.Name = "button1";
-            button1.Size = new Size(82, 22);
-            button1.TabIndex = 6;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(202, 219);
-            button2.Margin = new Padding(3, 2, 3, 2);
-            button2.Name = "button2";
-            button2.Size = new Size(82, 22);
-            button2.TabIndex = 7;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            lvCompras.Location = new Point(334, 41);
+            lvCompras.Name = "lvCompras";
+            lvCompras.Size = new Size(502, 197);
+            lvCompras.TabIndex = 9;
+            lvCompras.UseCompatibleStateImageBehavior = false;
+            lvCompras.Click += lvCompras_Click;
+            lvCompras.DoubleClick += lvCompras_DoubleClick;
             // 
             // Compra
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(380, 342);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Margin = new Padding(3, 2, 3, 2);
+            ClientSize = new Size(848, 255);
+            Controls.Add(lvCompras);
+            Controls.Add(groupBox1);
             Name = "Compra";
             Text = "Compra";
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
-        private Label label2;
+        private GroupBox groupBox1;
+        private Button btnCancelar;
+        private Button btnSalvar;
+        private TextBox txtForn;
+        private TextBox txtQtd;
+        private TextBox txtProd;
         private Label label3;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private Button button1;
-        private Button button2;
+        private Label label2;
+        private Label label1;
+        private Button btnProd;
+        private Button btnForn;
+        private ListView lvCompras;
+        private TextBox txtIdForn;
+        private TextBox txtIdProd;
     }
 }

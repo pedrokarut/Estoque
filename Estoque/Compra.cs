@@ -1,72 +1,158 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Drawing.Text;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Estoque.Classes;
+﻿using Estoque.Classes;
 using Estoque.Databse;
-using Npgsql;
+using Microsoft.EntityFrameworkCore;
 
 namespace Estoque
 {
     public partial class Compra : Form
     {
+        private Produto frmProd;
+        private Fornecedor frmForn;
+        public static Compra instance;
+        private DbConnection _context = new DbConnection();
+        int qtdAbreForn = 0;
+        int qtdAbreProd = 0;
         public Compra()
         {
             InitializeComponent();
+            instance = this;
+            this.CenterToScreen();
 
         }
 
-        private async Task button1_Click(object sender, EventArgs e)
+       private void Limpar()
         {
-
+            txtIdForn.Clear();
+            txtIdProd.Clear();
+            txtProd.Clear();
+            txtForn.Clear();
+            txtQtd.Clear();
 
         }
 
-        private async Task Inserir()
+        private void btnSalvar_Click(object sender, EventArgs e)
         {
-            string connection_string = "Host=ep-flat-frog-ack9fft2-pooler.sa-east-1.aws.neon.tech; Database=neondb; Username=neondb_owner; Password=npg_Zokm0BVp2XAT; SSL Mode=VerifyFull; Channel Binding=Require;";
+            if(ChecarCampos())
+            {
+                Compras c = new Compras();
+                c.id_prod = Int32.Parse(txtIdProd.Text);
+                c.id_fornecedor = Int32.Parse(txtIdForn.Text);
+                c.qtd = Int32.Parse(txtQtd.Text);
+                c.tstamp = DateTime.Now.ToString();
 
-            await using var conn = new NpgsqlConnection(connection_string);
+                try
+                {
+                    _context = new DbConnection();
+                    _context.Compras.Add(c);
+                    _context.SaveChanges();
+                    MessageBox.Show("Sucesso");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                Limpar();
+            }
+            
+        }
 
+        public void CarregaListView()
+        {
             try
             {
-                await conn.OpenAsync();
+                _context = new DbConnection();
+                lvCompras.Items.Clear();
 
-                await using (var cmd = new NpgsqlCommand())
+                foreach (var prod in _context.Compras.OrderBy(p => p.id))
                 {
-                    cmd.Connection = conn;
-
-                    cmd.CommandText = "INSERT INTO produtos (name, value) VALUES (@name, @value);";
-                    cmd.Parameters.AddWithValue("name", "Teste C#");
-                    cmd.Parameters.AddWithValue("value", 1);
-                    await cmd.ExecuteNonQueryAsync();
-                    cmd.Parameters.Clear();
-                    await cmd.ExecuteNonQueryAsync();
+                    lvCompras.Items.Add(new ListViewItem
+                    (new String[] { prod.id.ToString(),
+                                    prod.id_prod.ToString(),
+                                    prod.id_fornecedor.ToString(),
+                                    prod.qtd.ToString()
+                    }));
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString());
+                MessageBox.Show(ex.Message);
+            }
+
+
+        }
+
+        private bool ChecarCampos()
+        {
+            if (txtForn.Text == "")
+            {
+                MessageBox.Show("Fornecedor não pode ser vazio!");
+                txtForn.Focus();
+                return false;
+            }
+            else if (txtProd.Text == "")
+            {
+                MessageBox.Show("Produto não pode ser vazio!");
+                txtProd.Focus();
+                return false;
+            }
+            else if (txtQtd.Text == "")
+            {
+                if(txtQtd.Text != "" && Int32.Parse(txtQtd.Text) > 0)
+                {
+                    MessageBox.Show("Quantidade deve ser maior que 0");
+                    txtQtd.Focus();
+                    return false;
+                }
+                else
+                {
+                    MessageBox.Show("Quantidade não pode ser vazia");
+                    txtQtd.Focus();
+                    return false;
+                }
+                
+            }
+            else return true;
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Limpar();
+        }
+
+        private void btnProd_Click(object sender, EventArgs e)
+        {
+            if (qtdAbreProd == 0)
+            {
+                frmProd = new Produto();
+                frmProd.ShowDialog();
+            }
+            else
+            {
+                Produto.instance.ShowDialog();
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnForn_Click(object sender, EventArgs e)
         {
-            InserirLinq();
+            if (qtdAbreProd == 0)
+            {
+                frmProd = new Produto();
+                frmProd.ShowDialog();
+            }
+            else
+            {
+                Produto.instance.ShowDialog();
+            }
         }
 
-        private async Task InserirLinq()
+        private void lvCompras_Click(object sender, EventArgs e)
         {
-            DbConnection _context = new DbConnection();
-            //Produtos p = new Produtos("banana", 22);
-            //_context.Produtos.Add(p);
-            //await _context.SaveChangesAsync();
+
+        }
+
+        private void lvCompras_DoubleClick(object sender, EventArgs e)
+        {
+
         }
     }
 }
