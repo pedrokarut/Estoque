@@ -11,11 +11,16 @@ namespace Estoque
         public static Produto instance;
         private Fornecedor frmForn;
         private int qtdAbreProd = 0;
+        public TextBox txtIdFornecedor;
+        public bool veioVenda = false;
+        public bool veioCompra = false;
+
         public Produto()
         {
             InitializeComponent();
             CarregaListView();
             instance = this;
+            txtIdFornecedor = txtIdForn;
         }
 
 
@@ -218,18 +223,32 @@ namespace Estoque
 
         private void lvProdutos_DoubleClick(object sender, EventArgs e)
         {
-            if (lvProdutos.SelectedItems[0].Text != "")
+            if(veioCompra)
             {
-                //Venda v = new Venda(Int32.Parse(lvProdutos.SelectedItems[0].Text), "prod");
+                veioCompra = false;
                 this.Hide();
-                Venda.instance.txtId.Text = lvProdutos.SelectedItems[0].Text;
-                int id = Int32.Parse(txtId.Text);
+                Compra.instance.txtIdProduto.Text = lvProdutos.SelectedItems[0].Text;
+                int id = Int32.Parse(Compra.instance.txtIdProduto.Text);
                 _context = new DbConnection();
                 var p = _context.Produtos.FirstOrDefault(p => p.id == id);
-                Venda.instance.txtNome.Text = p.name;
-                Venda.instance.txtMargem.Text = p.value.ToString();
-                Venda.instance.Show();
+                Compra.instance.txtNomeProduto.Text = p.name;
+                Compra.instance.Show();
             }
+            if(veioVenda)
+            {
+                if (lvProdutos.SelectedItems[0].Text != "")
+                {
+                    veioVenda = false;
+                    this.Hide();
+                    Venda.instance.txtId.Text = lvProdutos.SelectedItems[0].Text;
+                    int id = Int32.Parse(txtId.Text);
+                    _context = new DbConnection();
+                    var p = _context.Produtos.FirstOrDefault(p => p.id == id);
+                    Venda.instance.txtNome.Text = p.name;
+                    Venda.instance.txtMargem.Text = p.value.ToString();
+                    Venda.instance.Show();
+                }
+            }            
 
         }
 
@@ -243,12 +262,40 @@ namespace Estoque
             if (qtdAbreProd == 0)
             {
                 frmForn = new Fornecedor();
+                frmForn.veioProd = true;
                 frmForn.ShowDialog();
             }
             else
             {
                 Fornecedor.instance.ShowDialog();
             }
+        }
+
+        private void txtCusto_Enter(object sender, EventArgs e)
+        {
+            if (txtIdForn.Text != "")
+            {
+                try
+                {
+                    var f = _context.Fornecedores.FirstOrDefault(p => p.id == Int32.Parse(txtIdFornecedor.Text));
+                    txtFornecedor.Text = f.nome;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selecione o fornecedor antes");
+                txtFornecedor.Focus();
+            }
+
+        }
+
+        private void lvProdutos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

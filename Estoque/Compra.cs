@@ -12,11 +12,24 @@ namespace Estoque
         private DbConnection _context = new DbConnection();
         int qtdAbreForn = 0;
         int qtdAbreProd = 0;
+        public TextBox txtIdProduto;
+        public TextBox txtNomeProduto;
+        public TextBox txtIdFornecedor;
+        public TextBox txtNomeFornecedor;
+
+        private DbConnection _contextProd = new DbConnection();
+        private DbConnection _contextForn = new DbConnection();
+
         public Compra()
         {
             InitializeComponent();
+            CarregaListView();
             instance = this;
             this.CenterToScreen();
+            txtIdProduto = txtIdProd;
+            txtNomeProduto = txtProd;
+            txtIdFornecedor = txtIdForn;
+            txtNomeFornecedor = txtForn;
 
         }
 
@@ -42,6 +55,20 @@ namespace Estoque
 
                 try
                 {
+                    var p = _contextProd.Produtos.FirstOrDefault(o => o.id == c.id_prod);
+                    var qtdNova = p.qtd + c.qtd;
+                    p.qtd = qtdNova;
+                    _contextProd.Produtos.Update(p);
+                    _contextProd.SaveChanges();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Qtd do prod não atualizada " + ex.Message);
+                }
+                
+
+                try
+                {
                     _context = new DbConnection();
                     _context.Compras.Add(c);
                     _context.SaveChanges();
@@ -52,6 +79,7 @@ namespace Estoque
                     MessageBox.Show(ex.Message);
                 }
                 Limpar();
+                CarregaListView();
             }
             
         }
@@ -65,10 +93,12 @@ namespace Estoque
 
                 foreach (var prod in _context.Compras.OrderBy(p => p.id))
                 {
+                    var p = _contextProd.Produtos.FirstOrDefault(o => o.id == prod.id_prod);
+                    var f = _contextForn.Fornecedores.FirstOrDefault(l => l.id == prod.id_fornecedor);
                     lvCompras.Items.Add(new ListViewItem
                     (new String[] { prod.id.ToString(),
-                                    prod.id_prod.ToString(),
-                                    prod.id_fornecedor.ToString(),
+                                    p.name,
+                                    f.nome,
                                     prod.qtd.ToString()
                     }));
                 }
@@ -124,7 +154,8 @@ namespace Estoque
             if (qtdAbreProd == 0)
             {
                 frmProd = new Produto();
-                frmProd.ShowDialog();
+                frmProd.veioCompra = true;                
+                frmProd.ShowDialog();                
             }
             else
             {
@@ -136,12 +167,13 @@ namespace Estoque
         {
             if (qtdAbreProd == 0)
             {
-                frmProd = new Produto();
-                frmProd.ShowDialog();
+                frmForn = new Fornecedor();
+                frmForn.veioCompra=true;
+                frmForn.ShowDialog();
             }
             else
             {
-                Produto.instance.ShowDialog();
+                Fornecedor.instance.ShowDialog();
             }
         }
 

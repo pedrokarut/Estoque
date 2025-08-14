@@ -211,6 +211,7 @@
             lvForn.TabIndex = 1;
             lvForn.UseCompatibleStateImageBehavior = false;
             lvForn.View = View.Details;
+            lvForn.SelectedIndexChanged += lvForn_SelectedIndexChanged;
             lvForn.Click += lvForn_Click;
             lvForn.DoubleClick += lvForn_DoubleClick;
             // 

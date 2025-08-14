@@ -17,7 +17,9 @@ namespace Estoque
     {
         private DbConnection _context = new DbConnection();
         public static Fornecedor instance;
-        
+        public bool veioCompra = false;
+        public bool veioProd = false;
+
         public Fornecedor()
         {
             InitializeComponent();
@@ -189,16 +191,31 @@ namespace Estoque
 
         private void lvForn_DoubleClick(object sender, EventArgs e)
         {
-            if (lvForn.SelectedItems[0].Text != "")
+            if(veioCompra)
             {
-                this.Hide();
-                Venda.instance.txtIdCliente.Text = lvForn.SelectedItems[0].Text;
-                int id = Int32.Parse(txtId.Text);
-                _context = new DbConnection();
-                var p = _context.Fornecedores.FirstOrDefault(p => p.id == id);
-                Venda.instance.txtNomeCliente.Text = p.nome;
-                Venda.instance.Show();
+                veioCompra = false;
+
+                if (lvForn.SelectedItems[0].Text != "")
+                {
+                    this.Hide();
+                    Compra.instance.txtIdFornecedor.Text = lvForn.SelectedItems[0].Text;
+                    var f = _context.Fornecedores.FirstOrDefault(p => p.id == Int32.Parse(Compra.instance.txtIdFornecedor.Text));
+                    Compra.instance.txtNomeFornecedor.Text = f.nome;
+                    Compra.instance.Show();
+                }
             }
+            if(veioProd)
+            {
+                veioProd = false;
+
+                if (lvForn.SelectedItems[0].Text != "")
+                {
+                    this.Hide();
+                    Produto.instance.txtIdFornecedor.Text = lvForn.SelectedItems[0].Text;
+                    Produto.instance.Show();
+                }
+            }
+            
         }
 
         private void lvForn_Click(object sender, EventArgs e)
@@ -206,6 +223,11 @@ namespace Estoque
             int id = Int32.Parse(lvForn.SelectedItems[0].Text);
 
             FindFornecedores(id);
+        }
+
+        private void lvForn_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -43,6 +43,10 @@
             label2 = new Label();
             label1 = new Label();
             lvCompras = new ListView();
+            id = new ColumnHeader();
+            produto = new ColumnHeader();
+            quantidade = new ColumnHeader();
+            forn = new ColumnHeader();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -175,13 +179,34 @@
             // 
             // lvCompras
             // 
+            lvCompras.Columns.AddRange(new ColumnHeader[] { id, produto, quantidade, forn });
             lvCompras.Location = new Point(334, 41);
             lvCompras.Name = "lvCompras";
             lvCompras.Size = new Size(502, 197);
             lvCompras.TabIndex = 9;
             lvCompras.UseCompatibleStateImageBehavior = false;
+            lvCompras.View = View.Details;
             lvCompras.Click += lvCompras_Click;
             lvCompras.DoubleClick += lvCompras_DoubleClick;
+            // 
+            // id
+            // 
+            id.Text = "id";
+            id.Width = 30;
+            // 
+            // produto
+            // 
+            produto.Text = "Produto";
+            produto.Width = 100;
+            // 
+            // quantidade
+            // 
+            quantidade.Text = "Qtd";
+            // 
+            // forn
+            // 
+            forn.Text = "Fornecedor";
+            forn.Width = 100;
             // 
             // Compra
             // 
@@ -213,5 +238,9 @@
         private ListView lvCompras;
         private TextBox txtIdForn;
         private TextBox txtIdProd;
+        private ColumnHeader id;
+        private ColumnHeader produto;
+        private ColumnHeader quantidade;
+        private ColumnHeader forn;
     }
 }

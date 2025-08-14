@@ -73,6 +73,7 @@
             lvProdutos.TabIndex = 8;
             lvProdutos.UseCompatibleStateImageBehavior = false;
             lvProdutos.View = View.Details;
+            lvProdutos.SelectedIndexChanged += lvProdutos_SelectedIndexChanged;
             lvProdutos.Click += lvProdutos_Click;
             lvProdutos.DoubleClick += lvProdutos_DoubleClick;
             // 
@@ -194,6 +195,7 @@
             txtCusto.Name = "txtCusto";
             txtCusto.Size = new Size(189, 27);
             txtCusto.TabIndex = 22;
+            txtCusto.Enter += txtCusto_Enter;
             // 
             // label7
             // 
