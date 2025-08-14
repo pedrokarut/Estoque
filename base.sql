@@ -56,10 +56,11 @@ telefone text,
 tstamp text); 
 
 
-CREATE TABLE IF NOT EXISTS compra(id SERIAL PRIMARY KEY, 
+CREATE TABLE IF NOT EXISTS compras(id SERIAL PRIMARY KEY, 
 id_prod INT NOT NULL,
-if_fornecedor INT NOT NULL, 
+id_fornecedor INT NOT NULL, 
 qtd INT NOT NULL,
 tstamp text); 
+
 
 
