@@ -38,3 +38,4 @@ C:\Users\pe\Teste\Estoque\Estoque\obj\Release\net8.0-windows\refint\Estoque.dll
 C:\Users\pe\Teste\Estoque\Estoque\obj\Release\net8.0-windows\Estoque.pdb
 C:\Users\pe\Teste\Estoque\Estoque\obj\Release\net8.0-windows\Estoque.genruntimeconfig.cache
 C:\Users\pe\Teste\Estoque\Estoque\obj\Release\net8.0-windows\ref\Estoque.dll
+C:\Users\pe\Teste\Estoque\Estoque\obj\Release\net8.0-windows\Estoque.Principal.resources

@@ -110,8 +110,8 @@ namespace Estoque
         {
             if (qtdAbreProd == 0)
             {
-                frmProd.veioVenda = true;
                 frmProd = new Produto();
+                frmProd.veioVenda = true;
                 frmProd.ShowDialog();                
             }
             else

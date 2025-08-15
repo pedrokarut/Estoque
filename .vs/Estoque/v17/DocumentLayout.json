@@ -3,6 +3,34 @@
   "WorkspaceRootPath": "C:\\Users\\pe\\Teste\\Estoque\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{959EB099-DE19-4AA5-8F47-DE45D28DF430}|Estoque\\Estoque.csproj|c:\\users\\pe\\teste\\estoque\\estoque\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{959EB099-DE19-4AA5-8F47-DE45D28DF430}|Estoque\\Estoque.csproj|solutionrelative:estoque\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{959EB099-DE19-4AA5-8F47-DE45D28DF430}|Estoque\\Estoque.csproj|c:\\users\\pe\\teste\\estoque\\estoque\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{959EB099-DE19-4AA5-8F47-DE45D28DF430}|Estoque\\Estoque.csproj|solutionrelative:estoque\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{959EB099-DE19-4AA5-8F47-DE45D28DF430}|Estoque\\Estoque.csproj|C:\\Users\\pe\\Teste\\Estoque\\estoque\\venda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{959EB099-DE19-4AA5-8F47-DE45D28DF430}|Estoque\\Estoque.csproj|solutionrelative:estoque\\venda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{959EB099-DE19-4AA5-8F47-DE45D28DF430}|Estoque\\Estoque.csproj|c:\\users\\pe\\teste\\estoque\\estoque\\venda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{959EB099-DE19-4AA5-8F47-DE45D28DF430}|Estoque\\Estoque.csproj|solutionrelative:estoque\\venda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{959EB099-DE19-4AA5-8F47-DE45D28DF430}|Estoque\\Estoque.csproj|C:\\Users\\pe\\Teste\\Estoque\\estoque\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{959EB099-DE19-4AA5-8F47-DE45D28DF430}|Estoque\\Estoque.csproj|solutionrelative:estoque\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{959EB099-DE19-4AA5-8F47-DE45D28DF430}|Estoque\\Estoque.csproj|c:\\users\\pe\\teste\\estoque\\estoque\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{959EB099-DE19-4AA5-8F47-DE45D28DF430}|Estoque\\Estoque.csproj|solutionrelative:estoque\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{959EB099-DE19-4AA5-8F47-DE45D28DF430}|Estoque\\Estoque.csproj|c:\\users\\pe\\teste\\estoque\\estoque\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{959EB099-DE19-4AA5-8F47-DE45D28DF430}|Estoque\\Estoque.csproj|solutionrelative:estoque\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{959EB099-DE19-4AA5-8F47-DE45D28DF430}|Estoque\\Estoque.csproj|c:\\users\\pe\\teste\\estoque\\estoque\\compra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{959EB099-DE19-4AA5-8F47-DE45D28DF430}|Estoque\\Estoque.csproj|solutionrelative:estoque\\compra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -31,28 +59,8 @@
       "RelativeMoniker": "D:0:0:{959EB099-DE19-4AA5-8F47-DE45D28DF430}|Estoque\\Estoque.csproj|solutionrelative:estoque\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{959EB099-DE19-4AA5-8F47-DE45D28DF430}|Estoque\\Estoque.csproj|c:\\users\\pe\\teste\\estoque\\estoque\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{959EB099-DE19-4AA5-8F47-DE45D28DF430}|Estoque\\Estoque.csproj|solutionrelative:estoque\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{959EB099-DE19-4AA5-8F47-DE45D28DF430}|Estoque\\Estoque.csproj|c:\\users\\pe\\teste\\estoque\\estoque\\venda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{959EB099-DE19-4AA5-8F47-DE45D28DF430}|Estoque\\Estoque.csproj|solutionrelative:estoque\\venda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{959EB099-DE19-4AA5-8F47-DE45D28DF430}|Estoque\\Estoque.csproj|C:\\Users\\pe\\Teste\\Estoque\\estoque\\venda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{959EB099-DE19-4AA5-8F47-DE45D28DF430}|Estoque\\Estoque.csproj|solutionrelative:estoque\\venda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{959EB099-DE19-4AA5-8F47-DE45D28DF430}|Estoque\\Estoque.csproj|c:\\users\\pe\\teste\\estoque\\estoque\\classes\\produtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{959EB099-DE19-4AA5-8F47-DE45D28DF430}|Estoque\\Estoque.csproj|solutionrelative:estoque\\classes\\produtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{959EB099-DE19-4AA5-8F47-DE45D28DF430}|Estoque\\Estoque.csproj|c:\\users\\pe\\teste\\estoque\\estoque\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{959EB099-DE19-4AA5-8F47-DE45D28DF430}|Estoque\\Estoque.csproj|solutionrelative:estoque\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{959EB099-DE19-4AA5-8F47-DE45D28DF430}|Estoque\\Estoque.csproj|c:\\users\\pe\\teste\\estoque\\estoque\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{959EB099-DE19-4AA5-8F47-DE45D28DF430}|Estoque\\Estoque.csproj|solutionrelative:estoque\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{959EB099-DE19-4AA5-8F47-DE45D28DF430}|Estoque\\Estoque.csproj|c:\\users\\pe\\teste\\estoque\\estoque\\classes\\fornecedores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -90,159 +98,21 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 6,
               "Title": "Cliente.cs",
               "DocumentMoniker": "C:\\Users\\pe\\Teste\\Estoque\\Estoque\\Cliente.cs",
               "RelativeDocumentMoniker": "Estoque\\Cliente.cs",
               "ToolTip": "C:\\Users\\pe\\Teste\\Estoque\\Estoque\\Cliente.cs",
               "RelativeToolTip": "Estoque\\Cliente.cs",
-              "ViewState": "AgIAAKsAAAAAAAAAAAAAwI8AAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAKsAAAAAAAAAAAAAwLgAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-06T18:44:45.784Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Compras.cs",
-              "DocumentMoniker": "C:\\Users\\pe\\Teste\\Estoque\\Estoque\\Classes\\Compras.cs",
-              "RelativeDocumentMoniker": "Estoque\\Classes\\Compras.cs",
-              "ToolTip": "C:\\Users\\pe\\Teste\\Estoque\\Estoque\\Classes\\Compras.cs",
-              "RelativeToolTip": "Estoque\\Classes\\Compras.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-14T00:50:21.655Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Compra.cs [Projeto]",
-              "DocumentMoniker": "C:\\Users\\pe\\Teste\\Estoque\\Estoque\\Compra.cs",
-              "RelativeDocumentMoniker": "Estoque\\Compra.cs",
-              "ToolTip": "C:\\Users\\pe\\Teste\\Estoque\\Estoque\\Compra.cs [Projeto]",
-              "RelativeToolTip": "Estoque\\Compra.cs [Projeto]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-09T17:38:16.941Z",
-              "EditorCaption": " [Projeto]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Venda.cs",
-              "DocumentMoniker": "C:\\Users\\pe\\Teste\\Estoque\\Estoque\\Venda.cs",
-              "RelativeDocumentMoniker": "Estoque\\Venda.cs",
-              "ToolTip": "C:\\Users\\pe\\Teste\\Estoque\\Estoque\\Venda.cs",
-              "RelativeToolTip": "Estoque\\Venda.cs",
-              "ViewState": "AgIAAF0AAAAAAAAAAAAqwHIAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-10T15:48:31.688Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Compra.cs",
-              "DocumentMoniker": "C:\\Users\\pe\\Teste\\Estoque\\Estoque\\Compra.cs",
-              "RelativeDocumentMoniker": "Estoque\\Compra.cs",
-              "ToolTip": "C:\\Users\\pe\\Teste\\Estoque\\Estoque\\Compra.cs",
-              "RelativeToolTip": "Estoque\\Compra.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAAAkwD0AAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-11T23:12:48.455Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Produtos.cs",
-              "DocumentMoniker": "C:\\Users\\pe\\Teste\\Estoque\\Estoque\\Classes\\Produtos.cs",
-              "RelativeDocumentMoniker": "Estoque\\Classes\\Produtos.cs",
-              "ToolTip": "C:\\Users\\pe\\Teste\\Estoque\\Estoque\\Classes\\Produtos.cs",
-              "RelativeToolTip": "Estoque\\Classes\\Produtos.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-05T20:48:10.448Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\pe\\Teste\\Estoque\\Estoque\\Program.cs",
-              "RelativeDocumentMoniker": "Estoque\\Program.cs",
-              "ToolTip": "C:\\Users\\pe\\Teste\\Estoque\\Estoque\\Program.cs",
-              "RelativeToolTip": "Estoque\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-06T23:10:34.632Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Fornecedor.cs [Projeto]",
-              "DocumentMoniker": "C:\\Users\\pe\\Teste\\Estoque\\Estoque\\Fornecedor.cs",
-              "RelativeDocumentMoniker": "Estoque\\Fornecedor.cs",
-              "ToolTip": "C:\\Users\\pe\\Teste\\Estoque\\Estoque\\Fornecedor.cs [Projeto]",
-              "RelativeToolTip": "Estoque\\Fornecedor.cs [Projeto]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-11T23:35:27.285Z",
-              "EditorCaption": " [Projeto]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Fornecedor.cs",
-              "DocumentMoniker": "C:\\Users\\pe\\Teste\\Estoque\\Estoque\\Fornecedor.cs",
-              "RelativeDocumentMoniker": "Estoque\\Fornecedor.cs",
-              "ToolTip": "C:\\Users\\pe\\Teste\\Estoque\\Estoque\\Fornecedor.cs",
-              "RelativeToolTip": "Estoque\\Fornecedor.cs",
-              "ViewState": "AgIAAL4AAAAAAAAAAAAowMsAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-10T15:38:34.292Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Produto.cs [Projeto]",
-              "DocumentMoniker": "C:\\Users\\pe\\Teste\\Estoque\\Estoque\\Produto.cs",
-              "RelativeDocumentMoniker": "Estoque\\Produto.cs",
-              "ToolTip": "C:\\Users\\pe\\Teste\\Estoque\\Estoque\\Produto.cs [Projeto]",
-              "RelativeToolTip": "Estoque\\Produto.cs [Projeto]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-14T00:18:48.916Z",
-              "EditorCaption": " [Projeto]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "DbConnection.cs",
-              "DocumentMoniker": "C:\\Users\\pe\\Teste\\Estoque\\Estoque\\Databse\\DbConnection.cs",
-              "RelativeDocumentMoniker": "Estoque\\Databse\\DbConnection.cs",
-              "ToolTip": "C:\\Users\\pe\\Teste\\Estoque\\Estoque\\Databse\\DbConnection.cs",
-              "RelativeToolTip": "Estoque\\Databse\\DbConnection.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAowBsAAAALAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-06T13:06:45.773Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Produto.cs",
-              "DocumentMoniker": "C:\\Users\\pe\\Teste\\Estoque\\Estoque\\Produto.cs",
-              "RelativeDocumentMoniker": "Estoque\\Produto.cs",
-              "ToolTip": "C:\\Users\\pe\\Teste\\Estoque\\Estoque\\Produto.cs",
-              "RelativeToolTip": "Estoque\\Produto.cs",
-              "ViewState": "AgIAAAgBAAAAAAAAAAAuwBcBAABvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-10T15:49:00.495Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
               "Title": "Venda.cs [Projeto]",
               "DocumentMoniker": "C:\\Users\\pe\\Teste\\Estoque\\Estoque\\Venda.cs",
               "RelativeDocumentMoniker": "Estoque\\Venda.cs",
@@ -254,7 +124,166 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Venda.cs",
+              "DocumentMoniker": "C:\\Users\\pe\\Teste\\Estoque\\Estoque\\Venda.cs",
+              "RelativeDocumentMoniker": "Estoque\\Venda.cs",
+              "ToolTip": "C:\\Users\\pe\\Teste\\Estoque\\Estoque\\Venda.cs",
+              "RelativeToolTip": "Estoque\\Venda.cs",
+              "ViewState": "AgIAAIkAAAAAAAAAAAAAAHEAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-10T15:48:31.688Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Principal.cs [Projeto]",
+              "DocumentMoniker": "C:\\Users\\pe\\Teste\\Estoque\\Estoque\\Principal.cs",
+              "RelativeDocumentMoniker": "Estoque\\Principal.cs",
+              "ToolTip": "C:\\Users\\pe\\Teste\\Estoque\\Estoque\\Principal.cs [Projeto]",
+              "RelativeToolTip": "Estoque\\Principal.cs [Projeto]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-15T00:57:31.715Z",
+              "EditorCaption": " [Projeto]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Principal.cs",
+              "DocumentMoniker": "C:\\Users\\pe\\Teste\\Estoque\\Estoque\\Principal.cs",
+              "RelativeDocumentMoniker": "Estoque\\Principal.cs",
+              "ToolTip": "C:\\Users\\pe\\Teste\\Estoque\\Estoque\\Principal.cs",
+              "RelativeToolTip": "Estoque\\Principal.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAA4wB0AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-15T01:00:48.103Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Produto.cs [Projeto]",
+              "DocumentMoniker": "C:\\Users\\pe\\Teste\\Estoque\\Estoque\\Produto.cs",
+              "RelativeDocumentMoniker": "Estoque\\Produto.cs",
+              "ToolTip": "C:\\Users\\pe\\Teste\\Estoque\\Estoque\\Produto.cs [Projeto]",
+              "RelativeToolTip": "Estoque\\Produto.cs [Projeto]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-14T00:18:48.916Z",
+              "EditorCaption": " [Projeto]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\pe\\Teste\\Estoque\\Estoque\\Program.cs",
+              "RelativeDocumentMoniker": "Estoque\\Program.cs",
+              "ToolTip": "C:\\Users\\pe\\Teste\\Estoque\\Estoque\\Program.cs",
+              "RelativeToolTip": "Estoque\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-06T23:10:34.632Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Compra.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\pe\\Teste\\Estoque\\Estoque\\Compra.cs",
+              "RelativeDocumentMoniker": "Estoque\\Compra.cs",
+              "ToolTip": "C:\\Users\\pe\\Teste\\Estoque\\Estoque\\Compra.cs [Design]",
+              "RelativeToolTip": "Estoque\\Compra.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-09T17:38:16.941Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Compra.cs",
+              "DocumentMoniker": "C:\\Users\\pe\\Teste\\Estoque\\Estoque\\Compra.cs",
+              "RelativeDocumentMoniker": "Estoque\\Compra.cs",
+              "ToolTip": "C:\\Users\\pe\\Teste\\Estoque\\Estoque\\Compra.cs",
+              "RelativeToolTip": "Estoque\\Compra.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAkwEEAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-11T23:12:48.455Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Compras.cs",
+              "DocumentMoniker": "C:\\Users\\pe\\Teste\\Estoque\\Estoque\\Classes\\Compras.cs",
+              "RelativeDocumentMoniker": "Estoque\\Classes\\Compras.cs",
+              "ToolTip": "C:\\Users\\pe\\Teste\\Estoque\\Estoque\\Classes\\Compras.cs",
+              "RelativeToolTip": "Estoque\\Classes\\Compras.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-14T00:50:21.655Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Produtos.cs",
+              "DocumentMoniker": "C:\\Users\\pe\\Teste\\Estoque\\Estoque\\Classes\\Produtos.cs",
+              "RelativeDocumentMoniker": "Estoque\\Classes\\Produtos.cs",
+              "ToolTip": "C:\\Users\\pe\\Teste\\Estoque\\Estoque\\Classes\\Produtos.cs",
+              "RelativeToolTip": "Estoque\\Classes\\Produtos.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-05T20:48:10.448Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Fornecedor.cs [Projeto]",
+              "DocumentMoniker": "C:\\Users\\pe\\Teste\\Estoque\\Estoque\\Fornecedor.cs",
+              "RelativeDocumentMoniker": "Estoque\\Fornecedor.cs",
+              "ToolTip": "C:\\Users\\pe\\Teste\\Estoque\\Estoque\\Fornecedor.cs [Projeto]",
+              "RelativeToolTip": "Estoque\\Fornecedor.cs [Projeto]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-11T23:35:27.285Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Fornecedor.cs",
+              "DocumentMoniker": "C:\\Users\\pe\\Teste\\Estoque\\Estoque\\Fornecedor.cs",
+              "RelativeDocumentMoniker": "Estoque\\Fornecedor.cs",
+              "ToolTip": "C:\\Users\\pe\\Teste\\Estoque\\Estoque\\Fornecedor.cs",
+              "RelativeToolTip": "Estoque\\Fornecedor.cs",
+              "ViewState": "AgIAAL4AAAAAAAAAAAAowMsAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-10T15:38:34.292Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "DbConnection.cs",
+              "DocumentMoniker": "C:\\Users\\pe\\Teste\\Estoque\\Estoque\\Databse\\DbConnection.cs",
+              "RelativeDocumentMoniker": "Estoque\\Databse\\DbConnection.cs",
+              "ToolTip": "C:\\Users\\pe\\Teste\\Estoque\\Estoque\\Databse\\DbConnection.cs",
+              "RelativeToolTip": "Estoque\\Databse\\DbConnection.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAowBsAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-06T13:06:45.773Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 13,
+              "Title": "Produto.cs",
+              "DocumentMoniker": "C:\\Users\\pe\\Teste\\Estoque\\Estoque\\Produto.cs",
+              "RelativeDocumentMoniker": "Estoque\\Produto.cs",
+              "ToolTip": "C:\\Users\\pe\\Teste\\Estoque\\Estoque\\Produto.cs",
+              "RelativeToolTip": "Estoque\\Produto.cs",
+              "ViewState": "AgIAAAgBAAAAAAAAAAAuwBcBAABvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-10T15:49:00.495Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "Fornecedores.cs",
               "DocumentMoniker": "C:\\Users\\pe\\Teste\\Estoque\\Estoque\\Classes\\Fornecedores.cs",
               "RelativeDocumentMoniker": "Estoque\\Classes\\Fornecedores.cs",
@@ -266,7 +295,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "Produto.Designer.cs",
               "DocumentMoniker": "C:\\Users\\pe\\Teste\\Estoque\\Estoque\\Produto.Designer.cs",
               "RelativeDocumentMoniker": "Estoque\\Produto.Designer.cs",
@@ -279,7 +308,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "Usuarios.cs",
               "DocumentMoniker": "C:\\Users\\pe\\Teste\\Estoque\\Estoque\\Classes\\Usuarios.cs",
               "RelativeDocumentMoniker": "Estoque\\Classes\\Usuarios.cs",
@@ -291,7 +320,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "ItemVenda.cs",
               "DocumentMoniker": "C:\\Users\\pe\\Teste\\Estoque\\Estoque\\Classes\\ItemVenda.cs",
               "RelativeDocumentMoniker": "Estoque\\Classes\\ItemVenda.cs",
@@ -303,7 +332,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "Venda.Designer.cs",
               "DocumentMoniker": "C:\\Users\\pe\\Teste\\Estoque\\Estoque\\Venda.Designer.cs",
               "RelativeDocumentMoniker": "Estoque\\Venda.Designer.cs",
@@ -316,7 +345,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 20,
               "Title": "Usuario.cs [Projeto]",
               "DocumentMoniker": "C:\\Users\\pe\\Teste\\Estoque\\Estoque\\Usuario.cs",
               "RelativeDocumentMoniker": "Estoque\\Usuario.cs",
