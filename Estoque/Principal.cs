@@ -16,6 +16,7 @@ namespace Estoque
         public Principal()
         {
             InitializeComponent();
+            this.CenterToScreen();
         }
 
         private void compraToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -52,6 +53,11 @@ namespace Estoque
         {
             Usuario u = new Usuario();
             u.ShowDialog();
+        }
+
+        private void Principal_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

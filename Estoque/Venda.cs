@@ -112,7 +112,7 @@ namespace Estoque
             {
                 frmProd = new Produto();
                 frmProd.veioVenda = true;
-                frmProd.ShowDialog();                
+                frmProd.ShowDialog();
             }
             else
             {
@@ -128,14 +128,36 @@ namespace Estoque
             {
                 if (Int32.Parse(txtQtd.Text) > 0)
                 {
-                    listProd.Items.Add(new ListViewItem
-                    (new String[] {
+                    try
+                    {
+                        var p = _context.Produtos.FirstOrDefault(o => o.id == Int32.Parse(txtIdProdSel.Text));
+                        
+                        if(Int32.Parse(txtQtd.Text) < p.qtd)
+                        {
+                            listProd.Items.Add(new ListViewItem
+                                         (new String[] {
                                 txtId.Text,
                                 txtNomeProd.Text,
                                 txtQtd.Text,
                                 txtMargem.Text
-                    }));
-                    LimparCamposProdutos();
+                            }));
+                            LimparCamposProdutos();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Quantidade maior que nosso estoque!");
+                            txtQtd.Focus();
+                        }
+
+
+                        
+                    }
+                    catch(Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                    
+                    
                 }
                 else
                 {
@@ -164,7 +186,7 @@ namespace Estoque
 
         private void btnCalcular_Click(object sender, EventArgs e)
         {
-            
+
             if (listProd.Items.Count > 0)
             {
                 foreach (ListViewItem i in listProd.Items)
@@ -182,7 +204,7 @@ namespace Estoque
 
         private void btnFinalizar_Click(object sender, EventArgs e)
         {
-            
+
 
             if (ChecarCampos())
             {
@@ -192,13 +214,14 @@ namespace Estoque
                 v.valor_total = total;
                 v.forma_pagamento = cbFormaPagamento.Text;
                 v.tstamp = DateTime.Now.ToString();
-                v.obs = txtObs.Text;                    
+                v.obs = txtObs.Text;
 
                 try
                 {
                     _context = new DbConnection();
                     _context.Vendas.Add(v);
                     _context.SaveChanges();
+
                 }
                 catch (Exception ex)
                 {
@@ -225,6 +248,18 @@ namespace Estoque
                         _context.ItemVenda.Add(iv);
                         _context.SaveChanges();
                     }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+
+                    try
+                    {
+                        var p = _context.Produtos.FirstOrDefault(o => o.id == Int32.Parse(i.SubItems[0].Text));
+                        p.qtd -= Int32.Parse(i.SubItems[2].Text);
+                        _context.Produtos.Update(p);
+                        _context.SaveChanges();
+                    }
                     catch(Exception ex)
                     {
                         MessageBox.Show(ex.Message);
@@ -234,9 +269,24 @@ namespace Estoque
                 MessageBox.Show("Sucesso");
                 LimparCampos();
 
+                try
+                {//Registro Histórico
+                    Historicos h = new Historicos();
+                    h.id_usu = Login.instance.usuLogado.id;
+                    h.obs = "Venda realizada " + v.id;
+                    h.tstamp = DateTime.Now.ToString();
+
+                    _context.Historicos.Add(h);
+                    _context.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+
             }
-                
-            
+
+
         }
 
         private bool ChecarCampos()
@@ -281,6 +331,11 @@ namespace Estoque
             txtTotal.Clear();
             txtIdProdSel.Clear();
             cbFormaPagamento.Text = "";
+        }
+
+        private void btnExcProdLis_Click(object sender, EventArgs e)
+        {
+            listProd.Items.Remove(listProd.SelectedItems[0]);
         }
     }
 }

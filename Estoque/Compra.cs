@@ -60,6 +60,21 @@ namespace Estoque
                     p.qtd = qtdNova;
                     _contextProd.Produtos.Update(p);
                     _contextProd.SaveChanges();
+
+                    try
+                    {//Registro Histórico
+                        Historicos h = new Historicos();
+                        h.id_usu = Login.instance.usuLogado.id;
+                        h.obs = "Compra realizada " + p.id;
+                        h.tstamp = DateTime.Now.ToString();
+
+                        _context.Historicos.Add(h);
+                        _context.SaveChanges();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
                 }
                 catch(Exception ex)
                 {

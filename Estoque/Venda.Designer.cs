@@ -248,6 +248,7 @@
             btnExcProdLis.Size = new Size(44, 29);
             btnExcProdLis.TabIndex = 52;
             btnExcProdLis.UseVisualStyleBackColor = true;
+            btnExcProdLis.Click += btnExcProdLis_Click;
             // 
             // listView1
             // 

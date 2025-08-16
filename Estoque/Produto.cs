@@ -72,6 +72,21 @@ namespace Estoque
                     CarregaListView();
                     MessageBox.Show("Sucesso!");
                     Limpar();
+
+                    try
+                    {
+                        Historicos h = new Historicos();
+                        h.id_usu = Login.instance.usuLogado.id;
+                        h.obs = "Produto alterado " + p.id;
+                        h.tstamp = DateTime.Now.ToString();
+
+                        _context.Historicos.Add(h);
+                        _context.SaveChanges();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
                 }
             }
             else
@@ -98,6 +113,21 @@ namespace Estoque
                         CarregaListView();
                         MessageBox.Show("Sucesso!");
                         Limpar();
+
+                        try
+                        {
+                            Historicos h = new Historicos();
+                            h.id_usu = Login.instance.usuLogado.id;
+                            h.obs = "Produto alterado " + p.id;
+                            h.tstamp = DateTime.Now.ToString();
+
+                            _context.Historicos.Add(h);
+                            _context.SaveChanges();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.ToString());
+                        }
                     }
 
                 }
@@ -218,6 +248,21 @@ namespace Estoque
                 _context.SaveChangesAsync();
                 Limpar();
                 CarregaListView();
+
+                try
+                {
+                    Historicos h = new Historicos();
+                    h.id_usu = Login.instance.usuLogado.id;
+                    h.obs = "Produto excluido " + p.id;
+                    h.tstamp = DateTime.Now.ToString();
+
+                    _context.Historicos.Add(h);
+                    _context.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
             }
         }
 
